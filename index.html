@@ -86,18 +86,19 @@ footer{font-size:.8rem;color:var(--muted)}
 <div class="wrap">
   <header>
     <h1><span class="h">汉字</span>Luyện chữ Hán HSK 2</h1>
-    <p>Ôn 20 đoạn hội thoại của Bài 1–5 trong Giáo trình chuẩn HSK 2. Mặc định đang chọn Bài 3–5 cho bài kiểm tra sắp tới.</p>
+    <p>Ôn 24 đoạn hội thoại của Bài 1–6 trong Giáo trình chuẩn HSK 2. Mặc định đang chọn Bài 5–6 cho bài kiểm tra sắp tới.</p>
   </header>
 
   <div class="row"><span class="label">Phạm vi</span>
     <div class="chips" id="lessons">
-      <button class="chip" data-l="345" aria-pressed="true">Bài 3–5</button>
+      <button class="chip" data-l="56" aria-pressed="true">Bài 5–6</button>
       <button class="chip" data-l="all" aria-pressed="false">Tất cả</button>
       <button class="chip" data-l="1" aria-pressed="false">Bài 1</button>
       <button class="chip" data-l="2" aria-pressed="false">Bài 2</button>
       <button class="chip" data-l="3" aria-pressed="false">Bài 3</button>
       <button class="chip" data-l="4" aria-pressed="false">Bài 4</button>
       <button class="chip" data-l="5" aria-pressed="false">Bài 5</button>
+      <button class="chip" data-l="6" aria-pressed="false">Bài 6</button>
     </div>
   </div>
   <div class="chips" id="modes" role="tablist">
@@ -348,17 +349,93 @@ const GRAM=[
 {q:"Câu nào cùng nghĩa với “今天去不去打球？”",a:"今天去打球吗？",d:["今天不去打球。","今天去打球吧。","今天打球去了。"],e:"Động từ + 不 + động từ (去不去) là câu hỏi chính phản, nghĩa như câu hỏi dùng 吗.",l:5}
 ];
 
-const S={lesson:"345",mode:"flash"};
+/* ===== Bài 6 ===== */
+VOCAB.push(...[
+["门","mén","cửa, cổng",6,1],["外","wài","bên ngoài",6,1],["自行车","zìxíngchē","xe đạp",6,1],
+["羊肉","yángròu","thịt dê, thịt cừu",6,1],["好吃","hǎochī","ngon",6,1],["面条","miàntiáo","mì sợi",6,1],
+["打篮球","dǎ lánqiú","chơi bóng rổ",6,1],["因为","yīnwèi","bởi vì",6,1],["所以","suǒyǐ","cho nên",6,1],
+["游泳","yóu yǒng","bơi",6,1],["经常","jīngcháng","thường xuyên",6,1],["公斤","gōngjīn","kilôgam",6,1],["姐姐","jiějie","chị gái",6,1],
+["学校","xuéxiào","trường học",6,0],["天天","tiāntiān","ngày nào cũng",6,0],["来","lái","gọi (món), mua (khi gọi đồ)",6,0],
+["下雨","xià yǔ","trời mưa",6,0],["听说","tīngshuō","nghe nói",6,0],["没","méi","không, chưa (việc đã qua)",6,0],["怎么","zěnme","sao, sao lại",6,0]
+].map(([h,p,v,l,c])=>({h,p,v,l,c})));
+
+FILL.push(...[
+["你知道小王今天什么时候来___吗？","学校",["饭馆","房间","门外"],"Bạn có biết hôm nay cậu Vương khi nào đến trường không?",6],
+["他___来了。","已经",["开始","经常","因为"],"Cậu ấy đã đến rồi.",6],
+["你___知道他来了？","怎么",["什么","多少","哪个"],"Sao bạn biết cậu ấy đã đến?",6],
+["我在门___看见他的自行车了。","外",["下","中","边"],"Mình thấy xe đạp của cậu ấy ở ngoài cửa.",6],
+["我在___外看见他的自行车了。","门",["手","米","鱼"],"Mình thấy xe đạp của cậu ấy ở ngoài cửa.",6],
+["我在门外看见他的___了。","自行车",["手表","杯子","报纸"],"Mình thấy xe đạp của cậu ấy ở ngoài cửa.",6],
+["今天的羊肉很___，你怎么不吃了？","好吃",["漂亮","累","高"],"Món thịt cừu hôm nay rất ngon, sao anh không ăn nữa?",6],
+["今天的___很好吃，你怎么不吃了？","羊肉",["面条","咖啡","牛奶"],"Món thịt cừu hôm nay rất ngon, sao anh không ăn nữa?",6],
+["这个星期___都吃羊肉。","天天",["每","已经","以后"],"Tuần này ngày nào tôi cũng ăn thịt cừu.",6],
+["那你___想吃什么？","还",["就","真","对"],"Vậy anh còn muốn ăn món gì?",6],
+["___一点儿面条吧。","来",["去","给","送"],"Cho tôi mì sợi đi.",6],
+["来一点儿___吧。","面条",["羊肉","报纸","手表"],"Cho tôi mì sợi đi.",6],
+["昨天你们怎么都没去___？","打篮球",["游泳","旅游","跑步"],"Hôm qua sao các anh không đi chơi bóng rổ?",6],
+["___昨天下雨，所以我们都没去。","因为",["所以","已经","经常"],"Vì hôm qua trời mưa nên chúng tôi đều không đi.",6],
+["因为昨天下雨，___我们都没去。","所以",["因为","已经","还"],"Vì hôm qua trời mưa nên chúng tôi đều không đi.",6],
+["因为昨天___，所以我们都没去。","下雨",["游泳","跑步","休息"],"Vì hôm qua trời mưa nên chúng tôi đều không đi.",6],
+["我去___了。","游泳",["起床","出院","生病"],"Tôi đi bơi.",6],
+["你___游泳吗？","经常",["已经","因为","所以"],"Anh có đi bơi thường xuyên không?",6],
+["我现在七十___了。","公斤",["米","块","点"],"Bây giờ tôi nặng 70 kg rồi.",6],
+["这两天怎么___看见小张？","没",["不","都","也"],"Mấy ngày nay sao không thấy Tiểu Trương?",6],
+["去北京了？是去___吗？","旅游",["游泳","跑步","考试"],"Đi Bắc Kinh à? Có phải đi du lịch không?",6],
+["不是，___是去看他姐姐。","听说",["知道","认识","介绍"],"Không phải, nghe nói là đi thăm chị gái anh ấy.",6],
+["不是，听说是去看他___。","姐姐",["丈夫","女儿","儿子"],"Không phải, nghe nói là đi thăm chị gái anh ấy.",6]
+].map(([s,a,d,v,l])=>({s,a,d,v,l})));
+
+ARR.push(...[
+["Cậu ấy đã đến rồi.",["他","已经","来","了"],6],
+["Mình thấy xe đạp của cậu ấy ở ngoài cửa.",["我","在门外","看见","他的","自行车","了"],6],
+["Sao anh không ăn nữa?",["你","怎么","不","吃","了"],6],
+["Tuần này ngày nào tôi cũng ăn thịt cừu.",["这个星期","天天","都","吃","羊肉"],6],
+["Cho tôi một ít mì sợi đi.",["来","一点儿","面条","吧"],6],
+["Vì hôm qua trời mưa nên chúng tôi đều không đi.",["因为","昨天","下雨","所以","我们","都","没去"],6],
+["Anh có thường xuyên đi bơi không?",["你","经常","游泳","吗"],6],
+["Bây giờ tôi nặng 70 kg rồi.",["我","现在","七十","公斤","了"],6],
+["Mấy ngày nay sao không thấy Tiểu Trương?",["这两天","怎么","没","看见","小张"],6],
+["Nghe nói là đi thăm chị gái anh ấy.",["听说","是","去","看","他","姐姐"],6]
+].map(([v,t,l])=>({v,t,l})));
+
+QA.push(...[
+["你知道小王今天什么时候来学校吗？","他已经来了。","Bạn biết hôm nay cậu Vương khi nào đến trường không? — Cậu ấy đến rồi.",6,"xw"],
+["你怎么知道他来了？","我在门外看见他的自行车了。","Sao bạn biết cậu ấy đến rồi? — Mình thấy xe đạp cậu ấy ở ngoài cửa.",6,"xw"],
+["今天的羊肉很好吃，你怎么不吃了？","这个星期天天都吃羊肉，不想吃了。","Thịt cừu hôm nay ngon lắm, sao anh không ăn nữa? — Tuần này ngày nào cũng ăn, không muốn ăn nữa.",6,"din"],
+["那你还想吃什么？","来一点儿面条吧。","Vậy anh còn muốn ăn gì? — Cho tôi mì sợi đi.",6,"din"],
+["昨天你们怎么都没去打篮球？","因为昨天下雨，所以我们都没去。","Hôm qua sao các anh không đi chơi bóng rổ? — Vì trời mưa nên đều không đi.",6,"lq"],
+["你经常游泳吗？","这个月我天天游泳。","Anh có thường đi bơi không? — Tháng này ngày nào tôi cũng bơi.",6,"lq"],
+["这两天怎么没看见小张？","他去北京了。","Mấy hôm nay sao không thấy Tiểu Trương? — Anh ấy đi Bắc Kinh rồi.",6,"xz"],
+["去北京了？是去旅游吗？","不是，听说是去看他姐姐。","Đi Bắc Kinh à? Đi du lịch à? — Không, nghe nói đi thăm chị gái.",6,"xz"]
+].map(([q,a,v,l,g])=>({q,a,v,l,g})));
+
+GRAM.push(
+{s:"今天的羊肉很好吃，你___不吃了？",a:"怎么",d:["什么","多少","几"],e:"怎么 + động từ: hỏi nguyên nhân, mang ý ngạc nhiên (sao lại…).",l:6},
+{s:"这两天怎么___看见小张？",a:"没",d:["不","了","的"],e:"没 phủ định việc đã xảy ra (không, chưa). 不 phủ định thói quen, ý muốn hoặc việc tương lai.",l:6},
+{s:"这个星期天天都吃羊肉，___想吃了。",a:"不",d:["没","了","的"],e:"不想: không muốn (ý muốn ở hiện tại) nên dùng 不, không dùng 没.",l:6},
+{q:"Chọn câu đúng: “Hôm qua tôi không đi.”",a:"我昨天没去。",d:["我昨天不去。","我昨天没去了。","我没昨天去。"],e:"Việc trong quá khứ dùng 没 + động từ, và không thêm 了.",l:6},
+{s:"___昨天下雨，所以我们都没去。",a:"因为",d:["所以","已经","还"],e:"因为…，所以… = vì…, nên… (nguyên nhân trước, kết quả sau).",l:6},
+{s:"因为昨天下雨，___我们都没去。",a:"所以",d:["因为","已经","还"],e:"因为…，所以… = vì…, nên… (nguyên nhân trước, kết quả sau).",l:6},
+{s:"你怎么不吃___？",a:"了",d:["的","吗","吧"],e:"不 + động từ + 了: không … nữa (trạng thái đã thay đổi).",l:6},
+{s:"我现在七十公斤___。",a:"了",d:["的","吗","呢"],e:"了 cuối câu chỉ sự thay đổi: bây giờ đã 70 kg rồi.",l:6},
+{s:"这个星期天天___吃羊肉。",a:"都",d:["也","还","就"],e:"天天 / 每天 + 都 + động từ: ngày nào cũng….",l:6},
+{s:"我在门外看见他的自行车___。",a:"了",d:["的","吗","吧"],e:"了 cuối câu: việc đã xảy ra.",l:6},
+{s:"___一点儿面条吧。",a:"来",d:["去","给","送"],e:"来 + (một ít / số lượng) + món: dùng khi gọi món, gọi đồ.",l:6},
+{s:"我___游泳。",a:"经常",d:["已经","因为","所以"],e:"经常 + động từ: thường xuyên làm gì, đứng trước động từ.",l:6},
+{s:"不是，___是去看他姐姐。",a:"听说",d:["知道","认识","介绍"],e:"听说 = nghe nói, đứng đầu câu khi kể lại thông tin nghe được.",l:6}
+);
+
+const S={lesson:"56",mode:"flash"};
 const view=document.getElementById("view");
 const shuffle=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
-const pool=a=>a.filter(x=>S.lesson==="all"||(S.lesson==="345"?x.l>=3:String(x.l)===S.lesson));
+const pool=a=>a.filter(x=>S.lesson==="all"||S.lesson.includes(String(x.l)));
 const el=(tag,cls,html)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(html!=null)e.innerHTML=html;return e};
 function distract(correct,cands,n=3){return shuffle([...new Set(cands.filter(x=>x!==correct))]).slice(0,n)}
 
 /* ---------- session engine ---------- */
 let sess=null;
 function startSession(items,render,name){
-  if(!items.length){view.innerHTML="";view.append(el("div","meta",`<span>${name}</span>`),el("p","hint","Phần này chỉ có câu hỏi cho Bài 3–5. Hãy chọn phạm vi Bài 3–5, Bài 3, 4, 5 hoặc Tất cả."));return}
+  if(!items.length){view.innerHTML="";view.append(el("div","meta",`<span>${name}</span>`),el("p","hint","Phần Ngữ pháp có câu hỏi cho Bài 3–6. Hãy chọn Bài 5–6, Tất cả hoặc một bài từ 3 đến 6."));return}
   sess={items,render,name,i:0,score:0,wrong:[]};showItem()}
 function showItem(){
   const {items,i}=sess;
@@ -386,7 +463,7 @@ function showResult(){
 }
 /* ---------- pinyin ---------- */
 const PP=window.pinyinPro;
-try{PP&&PP.customPinyin({还:"hái",长:"cháng",都:"dōu",了:"le",得:"de",眼睛:"yǎn jing",先生:"xiān sheng",时候:"shí hou",回来:"huí lai",衣服:"yī fu",丈夫:"zhàng fu",意思:"yì si",喜欢:"xǐ huan",什么:"shén me",怎么:"zěn me",晚上:"wǎn shang",早上:"zǎo shang",椅子:"yǐ zi",桌子:"zhuō zi",杯子:"bēi zi",儿子:"ér zi",房间:"fáng jiān",漂亮:"piào liang",认识:"rèn shi",休息:"xiū xi",知道:"zhī dào"})}catch(e){}
+try{PP&&PP.customPinyin({还:"hái",长:"cháng",都:"dōu",了:"le",得:"de",眼睛:"yǎn jing",先生:"xiān sheng",时候:"shí hou",回来:"huí lai",衣服:"yī fu",丈夫:"zhàng fu",意思:"yì si",喜欢:"xǐ huan",什么:"shén me",怎么:"zěn me",晚上:"wǎn shang",早上:"zǎo shang",椅子:"yǐ zi",桌子:"zhuō zi",杯子:"bēi zi",儿子:"ér zi",房间:"fáng jiān",漂亮:"piào liang",认识:"rèn shi",休息:"xiū xi",知道:"zhī dào",自行车:"zì xíng chē",姐姐:"jiě jie",听说:"tīng shuō"})}catch(e){}
 function py(text){
   if(!PP)return "";
   const v=VOCAB.find(x=>x.h===text);if(v)return v.p;

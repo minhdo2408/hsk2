@@ -1,6 +1,6 @@
 # Luyện chữ Hán HSK 2
 
-Trang luyện tập từ vựng, câu và ngữ pháp theo *Giáo trình chuẩn HSK 2* (Bài 1–5), dùng để ôn trong lớp.
+Trang luyện tập từ vựng, câu và ngữ pháp theo *Giáo trình chuẩn HSK 2* (Bài 1–6), dùng để ôn trong lớp.
 
 Mở trang: https://minhdo2408.github.io/hsk2/
 
