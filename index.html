@@ -6,7 +6,7 @@
 <style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 </head>
 <body>
-<title>Luyện chữ Hán HSK 2</title>
+<title>Luyện chữ Hán HSK 2–3</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap">
 <style>
@@ -85,22 +85,18 @@ footer{font-size:.8rem;color:var(--muted)}
 
 <div class="wrap">
   <header>
-    <h1><span class="h">汉字</span>Luyện chữ Hán HSK 2</h1>
-    <p>Ôn 28 đoạn hội thoại của Bài 1–7 trong Giáo trình chuẩn HSK 2. Mặc định đang chọn Bài 6–7 cho bài kiểm tra sắp tới.</p>
+    <h1><span class="h">汉字</span>Luyện chữ Hán HSK 2–3</h1>
+    <p>Ôn hội thoại Giáo trình chuẩn HSK 2 (Bài 1–7) và HSK 3 (Bài 1–3). Chọn cấp độ và bài bên dưới; trang tự nhớ lựa chọn lần trước trên máy của bạn.</p>
   </header>
 
-  <div class="row"><span class="label">Phạm vi</span>
-    <div class="chips" id="lessons">
-      <button class="chip" data-l="67" aria-pressed="true">Bài 6–7</button>
-      <button class="chip" data-l="all" aria-pressed="false">Tất cả</button>
-      <button class="chip" data-l="1" aria-pressed="false">Bài 1</button>
-      <button class="chip" data-l="2" aria-pressed="false">Bài 2</button>
-      <button class="chip" data-l="3" aria-pressed="false">Bài 3</button>
-      <button class="chip" data-l="4" aria-pressed="false">Bài 4</button>
-      <button class="chip" data-l="5" aria-pressed="false">Bài 5</button>
-      <button class="chip" data-l="6" aria-pressed="false">Bài 6</button>
-      <button class="chip" data-l="7" aria-pressed="false">Bài 7</button>
+  <div class="row"><span class="label">Cấp độ</span>
+    <div class="chips" id="levels">
+      <button class="chip" data-v="2" aria-pressed="false">HSK 2</button>
+      <button class="chip" data-v="3" aria-pressed="true">HSK 3</button>
     </div>
+  </div>
+  <div class="row"><span class="label">Phạm vi</span>
+    <div class="chips" id="lessons"></div>
   </div>
   <div class="chips" id="modes" role="tablist">
     <button class="chip" data-m="flash" aria-pressed="true">Thẻ từ</button>
@@ -352,7 +348,7 @@ const GRAM=[
 
 /* ===== Bài 6 ===== */
 VOCAB.push(...[
-["门","mén","cửa, cổng",6,1],["外","wài","bên ngoài",6,1],["自行车","zìxíngchē","xe đạp",6,1],
+["门","mén","cửa, cổng",6,1],["外","wài","ngoài (đứng sau danh từ: 门外)",6,1],["自行车","zìxíngchē","xe đạp",6,1],
 ["羊肉","yángròu","thịt dê, thịt cừu",6,1],["好吃","hǎochī","ngon",6,1],["面条","miàntiáo","mì sợi",6,1],
 ["打篮球","dǎ lánqiú","chơi bóng rổ",6,1],["因为","yīnwèi","bởi vì",6,1],["所以","suǒyǐ","cho nên",6,1],
 ["游泳","yóu yǒng","bơi",6,1],["经常","jīngcháng","thường xuyên",6,1],["公斤","gōngjīn","kilôgam",6,1],["姐姐","jiějie","chị gái",6,1],
@@ -505,17 +501,207 @@ GRAM.push(
 {s:"下个星期我要去北京，今天___吧。",a:"过",d:["到","走","离"],e:"过生日: tổ chức sinh nhật. 过 + ngày lễ, sinh nhật.",l:7}
 );
 
-const S={lesson:"67",mode:"flash"};
+/* ===================== HSK 3 (l = 31, 32, 33 → Bài 1, 2, 3) ===================== */
+VOCAB.push(...[
+["周末","zhōumò","cuối tuần",31,1],["打算","dǎsuàn","kế hoạch, dự định",31,1],["啊","a","trợ từ cuối câu (khẳng định, biện minh)",31,1],
+["跟","gēn","cùng, với",31,1],["一直","yìzhí","suốt, liên tục",31,1],["游戏","yóuxì","trò chơi",31,1],
+["作业","zuòyè","bài tập về nhà",31,1],["着急","zháojí","lo lắng, sốt ruột",31,1],["复习","fùxí","ôn tập",31,1],
+["南方","nánfāng","phía nam, miền nam",31,1],["北方","běifāng","phía bắc, miền bắc",31,1],["面包","miànbāo","bánh mì",31,1],
+["带","dài","mang theo",31,1],["地图","dìtú","bản đồ",31,1],["搬","bān","dọn, dời",31,1],
+["电影","diànyǐng","phim",31,0],["票","piào","vé",31,0],["找","zhǎo","tìm",31,0],["电脑","diànnǎo","máy tính",31,0],
+["玩儿","wánr","chơi",31,0],["好玩儿","hǎowánr","vui, hay (để chơi)",31,0],["去年","qùnián","năm ngoái",31,0],
+["手机","shǒujī","điện thoại di động",31,0],["水果","shuǐguǒ","trái cây",31,0],["茶","chá","trà",31,0],
+["搬家","bān jiā","chuyển nhà",31,0],["早就","zǎo jiù","từ lâu đã",31,0],
+["腿","tuǐ","chân",32,1],["疼","téng","đau, nhức",32,1],["脚","jiǎo","bàn chân",32,1],["树","shù","cây",32,1],
+["容易","róngyì","dễ, dễ dàng",32,1],["难","nán","khó, khó khăn",32,1],["太太","tàitai","bà, vợ",32,1],
+["秘书","mìshū","thư ký",32,1],["经理","jīnglǐ","giám đốc",32,1],["办公室","bàngōngshì","văn phòng",32,1],
+["辆","liàng","chiếc (lượng từ cho xe)",32,1],["楼","lóu","tòa nhà, lầu",32,1],["拿","ná","cầm, lấy",32,1],
+["把","bǎ","cây, chiếc (lượng từ cho vật có cán)",32,1],["伞","sǎn","ô, dù",32,1],["胖","pàng","béo",32,1],
+["其实","qíshí","thật ra",32,1],["瘦","shòu","gầy",32,1],
+["出租车","chūzūchē","taxi",32,0],["雨","yǔ","mưa",32,0],["告诉","gàosu","nói cho biết",32,0],
+["让","ràng","bảo, để (ai làm gì)",32,0],["办事","bàn shì","làm việc, giải quyết việc",32,0],["睡觉","shuì jiào","ngủ",32,0],
+["但是","dànshì","nhưng",32,0],["怎么办","zěnme bàn","làm sao bây giờ",32,0],["喂","wèi","alô",32,0],
+["上山","shàng shān","lên núi",32,0],["下山","xià shān","xuống núi",32,0],["请问","qǐngwèn","xin hỏi",32,0],
+["还是","háishi","hay (câu hỏi lựa chọn); tốt hơn là",33,1],["爬山","pá shān","leo núi",33,1],["小心","xiǎoxīn","cẩn thận",33,1],
+["条","tiáo","cái, chiếc (lượng từ cho quần, váy)",33,1],["裤子","kùzi","quần",33,1],["记得","jìde","nhớ, còn nhớ",33,1],
+["衬衫","chènshān","áo sơmi",33,1],["元","yuán","đồng (đơn vị tiền)",33,1],["新鲜","xīnxiān","tươi",33,1],
+["甜","tián","ngọt",33,1],["只","zhǐ","chỉ",33,1],["放","fàng","đặt, để",33,1],["饮料","yǐnliào","đồ uống",33,1],
+["或者","huòzhě","hoặc",33,1],["舒服","shūfu","dễ chịu, thoải mái",33,1],["花","huā","hoa",33,1],["绿","lǜ","xanh lá",33,1],
+["晴天","qíngtiān","trời nắng",33,0],["阴天","yīntiān","trời âm u",33,0],["多云","duōyún","nhiều mây",33,0],
+["电视","diànshì","tivi",33,0],["别的","biéde","cái khác",33,0],["西瓜","xīguā","dưa hấu",33,0],
+["苹果","píngguǒ","quả táo",33,0],["红茶","hóngchá","hồng trà",33,0],["绿茶","lǜchá","trà xanh",33,0],["再","zài","lại, thêm (nữa)",33,0]
+].map(([h,p,v,l,c])=>({h,p,v,l,c})));
+
+FILL.push(...[
+["周末你有什么___？","打算",["游戏","作业","地图"],"Cuối tuần bạn có dự định gì không?",31],
+["___你有什么打算？","周末",["去年","南方","一直"],"Cuối tuần bạn có dự định gì không?",31],
+["我早就想___了，请你吃饭、看电影、喝咖啡。","好",["完","给","跟"],"Mình nghĩ xong từ lâu rồi: mời bạn ăn cơm, xem phim, uống cà phê.",31],
+["我已经找___饭馆儿了，电影票也买好了。","好",["跟","给","着"],"Mình đã tìm được quán ăn rồi, vé xem phim cũng mua xong rồi.",31],
+["我还没想好要不要___你去呢。","跟",["给","对","离"],"Mình vẫn chưa nghĩ xong có nên đi cùng bạn hay không nữa.",31],
+["你___玩儿电脑游戏，作业写完了吗？","一直",["已经","以后","其实"],"Con chơi game máy tính suốt, bài tập làm xong chưa?",31],
+["你一直玩儿电脑___，作业写完了吗？","游戏",["作业","地图","面包"],"Con chơi game máy tính suốt, bài tập làm xong chưa?",31],
+["你一直玩儿电脑游戏，___写完了吗？","作业",["游戏","地图","面包"],"Con chơi game máy tính suốt, bài tập làm xong chưa?",31],
+["都写___了。","完",["给","跟","着"],"Làm xong hết rồi ạ.",31],
+["你怎么一点儿也不___？","着急",["复习","容易","新鲜"],"Sao con chẳng lo lắng chút nào vậy?",31],
+["我早就___好了。","复习",["着急","游戏","作业"],"Con ôn xong từ lâu rồi.",31],
+["那也不能___玩儿啊。","一直",["已经","其实","以后"],"Thế cũng không thể chơi suốt được.",31],
+["下个月我去旅游，你能___我一起去吗？","跟",["给","对","离"],"Tháng sau mình đi du lịch, bạn đi cùng mình được không?",31],
+["___啊，我们去年就是这个时候去的。","南方",["北方","周末","地图"],"Miền Nam chứ, năm ngoái chúng mình cũng đi đúng vào dịp này.",31],
+["南方太热了，___好一些，不冷也不热。","北方",["南方","周末","去年"],"Miền Nam nóng quá, miền Bắc tốt hơn một chút, không lạnh cũng không nóng.",31],
+["水果、___、茶都准备好了。","面包",["地图","作业","游戏"],"Trái cây, bánh mì, trà đều chuẩn bị xong rồi.",31],
+["我们还___什么？","带",["搬","放","找"],"Chúng ta còn mang theo gì nữa?",31],
+["手机、电脑、___，一个也不能少。","地图",["面包","作业","游戏"],"Điện thoại, máy tính, bản đồ, không thể thiếu thứ nào.",31],
+["我们是去旅游，不是___，还是少带一些吧。","搬家",["复习","爬山","办事"],"Chúng ta đi du lịch chứ có phải chuyển nhà đâu, thôi mang ít một chút đi.",31],
+["我们是去旅游，不是搬家，___少带一些吧。","还是",["或者","其实","一直"],"Chúng ta đi du lịch chứ có phải chuyển nhà đâu, thôi mang ít một chút đi.",31],
+["我现在___也疼，脚也疼。","腿",["树","楼","伞"],"Bây giờ chân mình cũng đau, bàn chân cũng đau.",32],
+["我现在腿也___，脚也疼。","疼",["胖","瘦","甜"],"Bây giờ chân mình cũng đau, bàn chân cũng đau.",32],
+["那边___多，我们过去坐一下吧。","树",["楼","伞","腿"],"Bên kia nhiều cây, mình qua đó ngồi một lát đi.",32],
+["上山___下山难，你不知道？","容易",["舒服","新鲜","着急"],"Lên núi dễ, xuống núi khó, bạn không biết à?",32],
+["上山容易下山___，你不知道？","难",["疼","甜","胖"],"Lên núi dễ, xuống núi khó, bạn không biết à?",32],
+["上来的时候我怎么没___这么累？","觉得",["记得","知道","打算"],"Lúc lên sao mình không thấy mệt thế này nhỉ?",32],
+["周经理出去了，不在___。","办公室",["教室","饭馆","机场"],"Giám đốc Châu ra ngoài rồi, không có ở văn phòng.",32],
+["回来了就___他给我打个电话。","让",["跟","给","对"],"Về rồi thì bảo anh ấy gọi điện cho tôi.",32],
+["他到了办公室我就___他。","告诉",["知道","记得","认识"],"Anh ấy đến văn phòng là tôi báo ngay.",32],
+["我出去叫___出租车就行了。","辆",["把","条","件"],"Mình ra ngoài gọi một chiếc taxi là được rồi.",32],
+["我上楼去给你拿___伞。","把",["辆","条","件"],"Mình lên lầu lấy cho bạn một cây dù.",32],
+["我上楼去给你___把伞。","拿",["放","搬","记"],"Mình lên lầu lấy cho bạn một cây dù.",32],
+["我拿了___就下来。","伞",["树","楼","腿"],"Mình lấy dù xong sẽ xuống ngay.",32],
+["你看，我这么___，怎么办呢？","胖",["瘦","累","疼"],"Anh xem, em béo thế này, làm sao bây giờ?",32],
+["___我每天都运动。","其实",["但是","一直","或者"],"Thật ra ngày nào em cũng vận động.",32],
+["但是你一点儿也没___！","瘦",["胖","累","疼"],"Nhưng em chẳng gầy đi chút nào!",32],
+["___你一点儿也没瘦！","但是",["其实","或者","还是"],"Nhưng em chẳng gầy đi chút nào!",32],
+["明天是晴天___阴天？","还是",["或者","但是","其实"],"Ngày mai trời nắng hay âm u?",33],
+["我们明天要去___。","爬山",["搬家","复习","办事"],"Ngày mai chúng mình định đi leo núi.",33],
+["爬山的时候要___点儿。","小心",["舒服","容易","新鲜"],"Khi leo núi phải cẩn thận một chút.",33],
+["你觉得这___裤子怎么样？","条",["件","辆","把"],"Anh thấy cái quần này thế nào?",33],
+["你觉得这条___怎么样？","裤子",["衬衫","伞","饮料"],"Anh thấy cái quần này thế nào?",33],
+["我___你已经有两条这样的裤子了。","记得",["觉得","知道","告诉"],"Anh nhớ là em đã có hai cái quần như thế này rồi.",33],
+["那我们再看看___。","别的",["这样","什么","哪个"],"Vậy mình xem thêm cái khác.",33],
+["这件___怎么样？","衬衫",["裤子","伞","西瓜"],"Chiếc áo sơmi này thế nào?",33],
+["这上面写着320___。","元",["米","公斤","条"],"Trên này có ghi 320 đồng.",33],
+["这些水果真___，我们买西瓜还是苹果？","新鲜",["舒服","容易","小心"],"Trái cây này tươi thật, mình mua dưa hấu hay táo?",33],
+["西瓜不___不要钱。","甜",["胖","难","疼"],"Dưa hấu không ngọt không lấy tiền.",33],
+["今天晚上___吃水果不吃饭！","只",["都","也","还"],"Tối nay chỉ ăn trái cây, không ăn cơm!",33],
+["桌子上___着很多饮料，你喝什么？","放",["拿","带","搬"],"Trên bàn có để rất nhiều đồ uống, bạn uống gì?",33],
+["桌子上放着很多___，你喝什么？","饮料",["面包","衬衫","伞"],"Trên bàn có để rất nhiều đồ uống, bạn uống gì?",33],
+["茶___咖啡都可以。","或者",["还是","但是","其实"],"Trà hoặc cà phê đều được.",33],
+["天冷了或者工作累了的时候，喝杯热茶会很___。","舒服",["容易","新鲜","小心"],"Lúc trời lạnh hoặc làm việc mệt, uống ly trà nóng sẽ rất dễ chịu.",33],
+["花茶、___茶、红茶，我都喜欢。","绿",["粉","新","甜"],"Trà hoa, trà xanh, hồng trà, mình đều thích.",33]
+].map(([s,a,d,v,l])=>({s,a,d,v,l})));
+
+ARR.push(...[
+["Cuối tuần bạn có dự định gì không?",["周末","你","有","什么","打算"],31],
+["Mình đã tìm được quán ăn rồi.",["我","已经","找好","饭馆儿","了"],31],
+["Mình vẫn chưa nghĩ xong có nên đi cùng bạn hay không.",["我","还没","想好","要不要","跟你","去"],31],
+["Sao con chẳng lo lắng chút nào vậy?",["你","怎么","一点儿","也","不","着急"],31],
+["Con ôn xong từ lâu rồi.",["我","早就","复习","好","了"],31],
+["Thôi thì mang ít một chút đi.",["还是","少","带","一些","吧"],31],
+["Chúng ta qua đó ngồi một lát đi.",["我们","过去","坐","一下","吧"],32],
+["Lên núi dễ, xuống núi khó.",["上山","容易","下山","难"],32],
+["Về rồi thì bảo anh ấy gọi điện cho tôi.",["回来了","就","让","他","给我","打个电话"],32],
+["Mưa to thật.",["雨","下","得","真","大"],32],
+["Mình lên lầu lấy cho bạn một cây dù.",["我","上楼去","给你","拿","把","伞"],32],
+["Mình lấy dù xong sẽ xuống ngay.",["我","拿了","伞","就","下来"],32],
+["Nhưng em chẳng gầy đi chút nào!",["但是","你","一点儿","也","没","瘦"],32],
+["Ngày mai trời nắng hay âm u?",["明天","是","晴天","还是","阴天"],33],
+["Khi leo núi phải cẩn thận một chút.",["爬山的","时候","要","小心","点儿"],33],
+["Anh nhớ là em đã có hai cái quần như thế này rồi.",["我","记得","你","已经","有","两条","这样的","裤子","了"],33],
+["Trên này có ghi 320 đồng.",["这","上面","写着","320元"],33],
+["Tối nay chỉ ăn trái cây, không ăn cơm!",["今天晚上","只","吃","水果","不","吃饭"],33],
+["Trên bàn có để rất nhiều đồ uống.",["桌子上","放着","很多","饮料"],33],
+["Trà hoặc cà phê đều được.",["茶","或者","咖啡","都","可以"],33]
+].map(([v,t,l])=>({v,t,l})));
+
+QA.push(...[
+["周末你有什么打算？","我早就想好了，请你吃饭、看电影、喝咖啡。","Cuối tuần bạn có dự định gì? — Mình nghĩ xong từ lâu rồi: mời bạn ăn cơm, xem phim, uống cà phê.",31,"plan"],
+["请我？","是啊，我已经找好饭馆儿了，电影票也买好了。","Mời mình á? — Ừ, mình tìm được quán rồi, vé xem phim cũng mua xong rồi.",31,"plan"],
+["你一直玩儿电脑游戏，作业写完了吗？","都写完了。","Con chơi game suốt, bài tập làm xong chưa? — Xong hết rồi ạ.",31,"hw"],
+["明天不是有考试吗？你怎么一点儿也不着急？","我早就复习好了。","Mai chẳng phải có bài kiểm tra sao? Sao con chẳng lo gì cả? — Con ôn xong từ lâu rồi.",31,"hw"],
+["下个月我去旅游，你能跟我一起去吗？","我还没想好呢。","Tháng sau mình đi du lịch, bạn đi cùng được không? — Mình chưa nghĩ xong nữa.",31,"plan"],
+["你觉得哪儿最好玩儿？","南方啊，我们去年就是这个时候去的。","Bạn thấy đi đâu vui nhất? — Miền Nam chứ, năm ngoái mình cũng đi vào dịp này.",31,"plan"],
+["水果、面包、茶都准备好了，我们还带什么？","手机、电脑、地图，一个也不能少。","Trái cây, bánh mì, trà chuẩn bị xong rồi, còn mang gì nữa? — Điện thoại, máy tính, bản đồ, không thể thiếu thứ nào.",31,"pack"],
+["再多带几件衣服吧。","我们是去旅游，不是搬家，还是少带一些吧。","Mang thêm mấy bộ quần áo đi. — Đi du lịch chứ có phải chuyển nhà đâu, thôi mang ít thôi.",31,"pack"],
+["怎么了？","我现在腿也疼，脚也疼。","Sao thế? — Bây giờ chân mình cũng đau, bàn chân cũng đau.",32,"wx"],
+["上来的时候我怎么没觉得这么累？","上山容易下山难，你不知道？","Lúc lên sao mình không thấy mệt thế này? — Lên núi dễ, xuống núi khó, bạn không biết à?",32,"wx"],
+["请问周明在吗？","周经理出去了，不在办公室。","Xin hỏi Châu Minh có ở đó không? — Giám đốc Châu ra ngoài rồi, không ở văn phòng.",32,"ph3"],
+["他去哪儿了？什么时候回来？","他出去办事了，下午回来。","Anh ấy đi đâu? Khi nào về? — Anh ấy ra ngoài làm việc, chiều sẽ về.",32,"ph3"],
+["回来了就让他给我打个电话。","好的，他到了办公室我就告诉他。","Về thì bảo anh ấy gọi cho tôi nhé. — Vâng, anh ấy đến văn phòng là tôi báo ngay.",32,"ph3"],
+["雨下得真大。你怎么回去？我送你吧。","没事，我出去叫辆出租车就行了。","Mưa to thật. Bạn về bằng gì? Mình đưa bạn về nhé. — Không sao, mình ra gọi taxi là được.",32,"rain"],
+["那你等等，我上楼去给你拿把伞。","好的。我跟你一起上去吧。","Vậy bạn đợi chút, mình lên lầu lấy dù cho bạn. — Được. Mình lên cùng bạn nhé.",32,"rain"],
+["你看，我这么胖，怎么办呢？","你每天晚上吃了饭就睡觉，也不出去走走，能不胖吗？","Em béo thế này, làm sao bây giờ? — Tối nào em cũng ăn xong là ngủ, chẳng ra ngoài đi dạo, sao mà không béo được?",32,"fat"],
+["你做什么运动了？","做饭啊。","Em tập môn gì vậy? — Nấu cơm đấy.",32,"fat"],
+["明天是晴天还是阴天？","阴天，电视上说多云。","Ngày mai trời nắng hay âm u? — Âm u, tivi nói trời nhiều mây.",33,"wx"],
+["怎么了？有事？","没事，我们明天要去爬山。","Sao vậy? Có việc gì à? — Không có gì, mai bọn mình định đi leo núi.",33,"wx"],
+["爬山的时候要小心点儿。","好，你也去吗？","Leo núi phải cẩn thận chút nhé. — Ừ, bạn cũng đi chứ?",33,"wx"],
+["你觉得这条裤子怎么样？","我记得你已经有两条这样的裤子了。","Anh thấy cái quần này thế nào? — Anh nhớ em có hai cái như vậy rồi.",33,"sh"],
+["这件衬衫怎么样？","还不错，多少钱？","Chiếc áo sơmi này thế nào? — Cũng được đấy, bao nhiêu tiền?",33,"sh"],
+["我们买西瓜还是苹果？","西瓜吧。你看，这上面写着“西瓜不甜不要钱”。","Mình mua dưa hấu hay táo? — Dưa hấu đi. Em xem, trên này ghi “dưa không ngọt không lấy tiền”.",33,"fruit"],
+["再买几个苹果。","好啊，今天晚上只吃水果不吃饭！","Mua thêm mấy quả táo nữa. — Được, tối nay chỉ ăn trái cây không ăn cơm!",33,"fruit"],
+["桌子上放着很多饮料，你喝什么？","茶或者咖啡都可以。","Trên bàn để nhiều đồ uống, bạn uống gì? — Trà hoặc cà phê đều được.",33,"cf"],
+["你喜欢喝什么茶？","花茶、绿茶、红茶，我都喜欢。","Bạn thích uống trà gì? — Trà hoa, trà xanh, hồng trà, mình đều thích.",33,"cf"]
+].map(([q,a,v,l,g])=>({q,a,v,l,g})));
+["做饭啊。","好的。我跟你一起上去吧。"].forEach(a=>GENERIC.add(a));
+
+GRAM.push(
+{s:"我早就想___了。",a:"好",d:["着","过","得"],e:"Bổ ngữ kết quả: động từ + 好 = làm xong, làm đến mức hoàn chỉnh (想好, 找好, 买好, 准备好).",l:31},
+{s:"作业写___了吗？",a:"完",d:["着","过","得"],e:"Động từ + 完 = làm xong, làm hết (写完, 吃完). Câu hỏi: 写完了吗？",l:31},
+{q:"Chọn câu phủ định đúng: “Mình vẫn chưa nghĩ xong.”",a:"我还没想好。",d:["我还不想好。","我还没想好了。","我还想没好。"],e:"Phủ định bổ ngữ kết quả: 没 + động từ + bổ ngữ, không thêm 了.",l:31},
+{s:"你怎么一点儿___不着急？",a:"也",d:["还","就","很"],e:"一点儿也不 / 一点儿也没 + …: không … chút nào.",l:31},
+{s:"明天___有考试吗？你怎么一点儿也不着急？",a:"不是",d:["是不","没有","不要"],e:"不是…吗？: câu hỏi tu từ, nghĩa là “chẳng phải là… sao?”.",l:31},
+{s:"你能___我一起去吗？",a:"跟",d:["给","对","离"],e:"跟 + người + 一起 + động từ: cùng với ai làm gì.",l:31},
+{s:"我们是去旅游，不是搬家，___少带一些吧。",a:"还是",d:["或者","其实","一直"],e:"还是 + đề nghị + 吧: tốt hơn là…, thôi thì….",l:31},
+{s:"手机、电脑、地图，一个___不能少。",a:"也",d:["还","就","很"],e:"一 + lượng từ + 也 + 不/没: không … một cái nào (phủ định hoàn toàn).",l:31},
+{s:"南方太热了，北方好___。",a:"一些",d:["一下","有点儿","一起"],e:"Tính từ + 一些 / 一点儿: so sánh, “… hơn một chút”.",l:31},
+{s:"这些我昨天下午___准备好了。",a:"就",d:["才","还","再"],e:"Thời gian + 就: việc xảy ra sớm (từ chiều qua đã…).",l:31},
+{s:"___多带几件衣服吧。",a:"再",d:["又","还","就"],e:"再 + động từ: thêm, nữa (việc chưa làm, dùng cho đề nghị hoặc tương lai).",l:31},
+{s:"那边树多，我们___坐一下吧。",a:"过去",d:["过来","上来","下去"],e:"Bổ ngữ xu hướng: 来 hướng về phía người nói, 去 hướng ra xa người nói. 过去 = đi qua bên đó.",l:32},
+{s:"上___的时候我怎么没觉得这么累？",a:"来",d:["去","下","过"],e:"上来: đi lên về phía người nói (người nói đang ở trên núi).",l:32},
+{s:"你在这儿等吧，我拿了伞就___。",a:"下来",d:["下去","上去","过去"],e:"Người nghe ở dưới, người nói đi xuống chỗ người nghe nên dùng 下来.",l:32},
+{s:"好的。我跟你一起___吧。",a:"上去",d:["上来","下来","回来"],e:"Hai người đang ở dưới, cùng đi lên (rời xa chỗ đang đứng) nên dùng 上去.",l:32},
+{q:"Chọn câu phủ định đúng: “Anh ấy vẫn chưa về.”",a:"他还没回来。",d:["他还不回来了。","他没回来了。","他还没来回。"],e:"Phủ định bổ ngữ xu hướng: 没 + động từ + 来/去, không thêm 了.",l:32},
+{s:"雨下___真大。",a:"得",d:["的","地","着"],e:"Bổ ngữ trình độ: động từ + 得 + (真/很…) + tính từ (下得真大 = mưa to thật).",l:32},
+{q:"Chọn câu đúng: “Anh ấy chạy nhanh.”",a:"他跑得很快。",d:["他跑很快得。","他很快跑得。","他得跑很快。"],e:"Trật tự bổ ngữ trình độ: động từ + 得 + 很 + tính từ.",l:32},
+{s:"我拿___伞就下来。",a:"了",d:["着","过","得"],e:"V1 + 了 + … + 就 + V2: làm xong V1 thì làm ngay V2.",l:32},
+{s:"你每天晚上吃了饭___睡觉。",a:"就",d:["才","还","再"],e:"吃了饭就睡觉: ăn xong là ngủ ngay.",l:32},
+{s:"回来了就___他给我打个电话。",a:"让",d:["跟","对","把"],e:"让 + người + động từ: bảo, để ai làm gì.",l:32},
+{s:"也不出去走走，能不胖___？",a:"吗",d:["呢","吧","的"],e:"能不…吗？: câu hỏi tu từ, “sao mà không… được?” (ý chắc chắn sẽ…).",l:32},
+{s:"但是你一点儿也___瘦！",a:"没",d:["不","了","都"],e:"一点儿也没 + động từ/tính từ: chẳng … chút nào (sự thay đổi đã không xảy ra: không gầy đi).",l:32},
+{s:"不出去___，能不胖吗？",a:"走走",d:["走着","走过","走得"],e:"Lặp động từ (走走, 看看, 等等): làm một chút, làm thử, giọng nhẹ nhàng.",l:32},
+{s:"明天是晴天___阴天？",a:"还是",d:["或者","但是","其实"],e:"还是 dùng trong câu hỏi lựa chọn: A 还是 B？",l:33},
+{s:"茶___咖啡都可以。",a:"或者",d:["还是","但是","其实"],e:"或者 dùng trong câu trần thuật: A 或者 B (A hoặc B đều được).",l:33},
+{s:"我们买西瓜___苹果？",a:"还是",d:["或者","但是","其实"],e:"Câu hỏi lựa chọn dùng 还是, không dùng 或者.",l:33},
+{s:"桌子上放___很多饮料。",a:"着",d:["了","过","得"],e:"Câu tồn tại: nơi chốn + động từ + 着 + sự vật (trên bàn có để đồ uống).",l:33},
+{s:"这上面写___320元。",a:"着",d:["了","过","得"],e:"上面写着…: trên đó có ghi… (trạng thái đang tồn tại).",l:33},
+{q:"Chọn câu đúng: “Trên bàn có để một cái cốc.”",a:"桌子上放着一个杯子。",d:["一个杯子放着桌子上。","桌子上一个杯子放着。","放着桌子上一个杯子。"],e:"Trật tự câu tồn tại: nơi chốn + động từ + 着 + số lượng + sự vật.",l:33},
+{s:"那我们___看看别的。",a:"再",d:["又","还","就"],e:"再 + động từ: lại, thêm (lần nữa, việc chưa xảy ra).",l:33},
+{s:"今天晚上___吃水果不吃饭！",a:"只",d:["都","也","还"],e:"只 + động từ: chỉ…. 只…不…: chỉ… mà không….",l:33},
+{s:"那我们买一个大点儿___吧。",a:"的",d:["了","得","着"],e:"Tính từ + (一)点儿 + 的: cái … hơn một chút (大点儿的 = cái to hơn chút).",l:33},
+{s:"天冷了的时候，喝杯热茶___很舒服。",a:"会",d:["要","能","想"],e:"会 + động từ/tính từ: sẽ (dự đoán khả năng xảy ra).",l:33},
+{s:"我记得你已经有两___这样的裤子了。",a:"条",d:["件","把","辆"],e:"Lượng từ: 条 (quần, váy), 件 (áo), 把 (dù), 辆 (xe).",l:33},
+{s:"爬山的时候要小心___。",a:"点儿",d:["一下","有点儿","一起"],e:"Tính từ + (一)点儿 trong lời dặn: … một chút (小心点儿 = cẩn thận chút).",l:33}
+);
+
+/* ---------- levels & lesson ranges ---------- */
+const LEVELS={
+  "2":[["6,7","Bài 6–7"],["1,2,3,4,5,6,7","Tất cả HSK 2"],["1","Bài 1"],["2","Bài 2"],["3","Bài 3"],["4","Bài 4"],["5","Bài 5"],["6","Bài 6"],["7","Bài 7"]],
+  "3":[["31,32,33","Bài 1–3"],["31","Bài 1"],["32","Bài 2"],["33","Bài 3"]]
+};
+const lessonName=l=>l>30?`HSK 3 · Bài ${l-30}`:`HSK 2 · Bài ${l}`;
+const S={level:"3",lesson:"31,32,33",mode:"flash"};
+try{const saved=JSON.parse(localStorage.getItem("hsk-prefs")||"{}");
+  if(LEVELS[saved.level]){S.level=saved.level;if(LEVELS[S.level].some(r=>r[0]===saved.lesson))S.lesson=saved.lesson;else S.lesson=LEVELS[S.level][0][0]}
+  if(saved.mode)S.mode=saved.mode}catch(e){}
+const savePrefs=()=>{try{localStorage.setItem("hsk-prefs",JSON.stringify(S))}catch(e){}};
 const view=document.getElementById("view");
 const shuffle=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
-const pool=a=>a.filter(x=>S.lesson==="all"||S.lesson.includes(String(x.l)));
+const pool=a=>{const set=S.lesson.split(",");return a.filter(x=>set.includes(String(x.l)))};
 const el=(tag,cls,html)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(html!=null)e.innerHTML=html;return e};
 function distract(correct,cands,n=3){return shuffle([...new Set(cands.filter(x=>x!==correct))]).slice(0,n)}
 
 /* ---------- session engine ---------- */
 let sess=null;
 function startSession(items,render,name){
-  if(!items.length){view.innerHTML="";view.append(el("div","meta",`<span>${name}</span>`),el("p","hint","Phần Ngữ pháp có câu hỏi cho Bài 3–7. Hãy chọn Bài 6–7, Tất cả hoặc một bài từ 3 đến 7."));return}
+  if(!items.length){view.innerHTML="";view.append(el("div","meta",`<span>${name}</span>`),el("p","hint","Chế độ này chưa có câu hỏi cho phạm vi đang chọn (Ngữ pháp HSK 2 bắt đầu từ Bài 3). Hãy chọn phạm vi khác."));return}
   sess={items,render,name,i:0,score:0,wrong:[]};showItem()}
 function showItem(){
   const {items,i}=sess;
@@ -543,7 +729,7 @@ function showResult(){
 }
 /* ---------- pinyin ---------- */
 const PP=window.pinyinPro;
-try{PP&&PP.customPinyin({还:"hái",长:"cháng",都:"dōu",了:"le",得:"de",眼睛:"yǎn jing",先生:"xiān sheng",时候:"shí hou",回来:"huí lai",衣服:"yī fu",丈夫:"zhàng fu",意思:"yì si",喜欢:"xǐ huan",什么:"shén me",怎么:"zěn me",晚上:"wǎn shang",早上:"zǎo shang",椅子:"yǐ zi",桌子:"zhuō zi",杯子:"bēi zi",儿子:"ér zi",房间:"fáng jiān",漂亮:"piào liang",认识:"rèn shi",休息:"xiū xi",知道:"zhī dào",自行车:"zì xíng chē",姐姐:"jiě jie",听说:"tīng shuō",教室:"jiào shì",好好:"hǎo hāo",公共汽车:"gōng gòng qì chē"})}catch(e){}
+try{PP&&PP.customPinyin({还:"hái",长:"cháng",都:"dōu",了:"le",得:"de",眼睛:"yǎn jing",先生:"xiān sheng",时候:"shí hou",回来:"huí lai",衣服:"yī fu",丈夫:"zhàng fu",意思:"yì si",喜欢:"xǐ huan",什么:"shén me",怎么:"zěn me",晚上:"wǎn shang",早上:"zǎo shang",椅子:"yǐ zi",桌子:"zhuō zi",杯子:"bēi zi",儿子:"ér zi",房间:"fáng jiān",漂亮:"piào liang",认识:"rèn shi",休息:"xiū xi",知道:"zhī dào",自行车:"zì xíng chē",姐姐:"jiě jie",听说:"tīng shuō",教室:"jiào shì",好好:"hǎo hāo",公共汽车:"gōng gòng qì chē",还是:"hái shi",着急:"zháo jí",地图:"dì tú",睡觉:"shuì jiào",太太:"tài tai",告诉:"gào su",舒服:"shū fu",上来:"shàng lai",下来:"xià lai",上去:"shàng qu",回去:"huí qu",出去:"chū qu",过去:"guò qu",走走:"zǒu zou",等等:"děng deng",看看:"kàn kan",记得:"jì de",别的:"bié de",裤子:"kù zi",打算:"dǎ suàn",便宜:"pián yi",放着:"fàng zhe",写着:"xiě zhe",就行:"jiù xíng",一直:"yì zhí",上面:"shàng mian"})}catch(e){}
 function py(text){
   if(!PP)return "";
   const v=VOCAB.find(x=>x.h===text);if(v)return v.p;
@@ -551,7 +737,7 @@ function py(text){
     const chars=[...text],syl=PP.pinyin(text,{type:"array",nonZh:"consecutive"});
     const out=[];let ci=0;
     syl.forEach(s=>{const ch=chars[ci];ci+=/^[一-鿿]$/.test(ch)?1:s.length;
-      if(ch==="儿"&&/[这那哪点]/.test(chars[ci-2]||"")&&out.length){out[out.length-1]+="r";return}
+      if(ch==="儿"&&/[这那哪点玩馆]/.test(chars[ci-2]||"")&&out.length){out[out.length-1]+="r";return}
       const p={"，":",","。":".","？":"?","！":"!","、":",","——":" —"}[s];
       if(p!=null||/^[,.?!]$/.test(s)){if(out.length)out[out.length-1]+=(p??s);return}
       out.push(s)});
@@ -642,8 +828,8 @@ function flashMode(){
     const w=list[i];view.innerHTML="";
     view.append(el("div","meta",`<span>Thẻ từ · ${list.length} từ</span><span>${i+1}/${list.length}</span>`));
     const c=el("div","card");c.tabIndex=0;c.setAttribute("role","button");
-    c.innerHTML=flip?`<span class="tag">${w.c?"Từ mới":"Từ trong bài"} · Bài ${w.l}</span><div class="big">${w.h}</div><span class="py">${w.p}</span><span class="vi">${w.v}</span>`
-                    :`<span class="tag">${w.c?"Từ mới":"Từ trong bài"} · Bài ${w.l}</span><div class="big">${w.h}</div><span class="hint">Chạm để xem phiên âm và nghĩa</span>`;
+    c.innerHTML=flip?`<span class="tag">${w.c?"Từ mới":"Từ trong bài"} · ${lessonName(w.l)}</span><div class="big">${w.h}</div><span class="py">${w.p}</span><span class="vi">${w.v}</span>`
+                    :`<span class="tag">${w.c?"Từ mới":"Từ trong bài"} · ${lessonName(w.l)}</span><div class="big">${w.h}</div><span class="hint">Chạm để xem phiên âm và nghĩa</span>`;
     c.onclick=()=>{flip=!flip;draw()};c.onkeydown=e=>{if(e.key===" "||e.key==="Enter"){e.preventDefault();c.click()}};
     const r=el("div","row");
     const pv=el("button","btn ghost","← Trước"),nx=el("button","btn","Tiếp →"),sh=el("button","btn ghost","Trộn thẻ");
@@ -666,11 +852,22 @@ function gramMode(){
   },"Ngữ pháp");
 }
 const MODES={flash:flashMode,vocab:vocabMode,fill:fillMode,arrange:arrangeMode,qa:qaMode,gram:gramMode,write:writeMode};
-function render(){MODES[S.mode]()}
-function bind(id,key,attr){document.getElementById(id).addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;
-  S[key]=b.dataset[attr];document.querySelectorAll(`#${id} .chip`).forEach(x=>x.setAttribute("aria-pressed",x===b));render()})}
-bind("lessons","lesson","l");bind("modes","mode","m");
-render();
+function render(){savePrefs();(MODES[S.mode]||MODES.flash)()}
+function drawLessons(){
+  const box=document.getElementById("lessons");box.innerHTML="";
+  LEVELS[S.level].forEach(([v,t])=>{const b=el("button","chip",t);b.dataset.l=v;b.setAttribute("aria-pressed",v===S.lesson);box.append(b)});
+}
+function syncChips(){
+  document.querySelectorAll("#levels .chip").forEach(x=>x.setAttribute("aria-pressed",x.dataset.v===S.level));
+  document.querySelectorAll("#modes .chip").forEach(x=>x.setAttribute("aria-pressed",x.dataset.m===S.mode));
+}
+document.getElementById("levels").addEventListener("click",e=>{const b=e.target.closest("button");if(!b||b.dataset.v===S.level)return;
+  S.level=b.dataset.v;S.lesson=LEVELS[S.level][0][0];drawLessons();syncChips();render()});
+document.getElementById("lessons").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;
+  S.lesson=b.dataset.l;document.querySelectorAll("#lessons .chip").forEach(x=>x.setAttribute("aria-pressed",x===b));render()});
+document.getElementById("modes").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;
+  S.mode=b.dataset.m;syncChips();render()});
+drawLessons();syncChips();render();
 </script>
 
 </body>
