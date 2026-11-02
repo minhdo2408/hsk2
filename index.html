@@ -86,12 +86,12 @@ footer{font-size:.8rem;color:var(--muted)}
 <div class="wrap">
   <header>
     <h1><span class="h">汉字</span>Luyện chữ Hán HSK 2</h1>
-    <p>Ôn 24 đoạn hội thoại của Bài 1–6 trong Giáo trình chuẩn HSK 2. Mặc định đang chọn Bài 5–6 cho bài kiểm tra sắp tới.</p>
+    <p>Ôn 28 đoạn hội thoại của Bài 1–7 trong Giáo trình chuẩn HSK 2. Mặc định đang chọn Bài 6–7 cho bài kiểm tra sắp tới.</p>
   </header>
 
   <div class="row"><span class="label">Phạm vi</span>
     <div class="chips" id="lessons">
-      <button class="chip" data-l="56" aria-pressed="true">Bài 5–6</button>
+      <button class="chip" data-l="67" aria-pressed="true">Bài 6–7</button>
       <button class="chip" data-l="all" aria-pressed="false">Tất cả</button>
       <button class="chip" data-l="1" aria-pressed="false">Bài 1</button>
       <button class="chip" data-l="2" aria-pressed="false">Bài 2</button>
@@ -99,6 +99,7 @@ footer{font-size:.8rem;color:var(--muted)}
       <button class="chip" data-l="4" aria-pressed="false">Bài 4</button>
       <button class="chip" data-l="5" aria-pressed="false">Bài 5</button>
       <button class="chip" data-l="6" aria-pressed="false">Bài 6</button>
+      <button class="chip" data-l="7" aria-pressed="false">Bài 7</button>
     </div>
   </div>
   <div class="chips" id="modes" role="tablist">
@@ -425,7 +426,86 @@ GRAM.push(
 {s:"不是，___是去看他姐姐。",a:"听说",d:["知道","认识","介绍"],e:"听说 = nghe nói, đứng đầu câu khi kể lại thông tin nghe được.",l:6}
 );
 
-const S={lesson:"56",mode:"flash"};
+/* ===== Bài 7 ===== */
+VOCAB.push(...[
+["教室","jiàoshì","lớp học",7,1],["机场","jīchǎng","sân bay",7,1],["路","lù","đường, lối đi",7,1],
+["离","lí","cách",7,1],["公司","gōngsī","công ty",7,1],["远","yuǎn","xa",7,1],
+["公共汽车","gōnggòng qìchē","xe buýt",7,1],["小时","xiǎoshí","giờ (đồng hồ), tiếng",7,1],["慢","màn","chậm",7,1],
+["快","kuài","nhanh; sắp",7,1],["过","guò","ăn (mừng), trải qua",7,1],["走","zǒu","đi, đi bộ",7,1],["到","dào","đến, tới",7,1],
+["飞机","fēijī","máy bay",7,0],["分钟","fēnzhōng","phút",7,0],["坐","zuò","ngồi; đi (xe, máy bay)",7,0],
+["开车","kāi chē","lái xe",7,0],["汽车","qìchē","xe hơi, ô tô",7,0],["学习","xuéxí","học, học tập",7,0],
+["好好","hǎohāo","(làm) thật tốt, chăm chỉ",7,0],["中国","Zhōngguó","Trung Quốc",7,0]
+].map(([h,p,v,l,c])=>({h,p,v,l,c})));
+
+FILL.push(...[
+["没有，他还在___学习呢。","教室",["机场","公司","饭馆"],"Chưa, anh ấy còn đang học trong lớp.",7],
+["没有，他___在教室学习呢。","还",["就","真","对"],"Chưa, anh ấy còn đang học trong lớp.",7],
+["已经9点多了，他___还在学习？","怎么",["什么","多少","哪个"],"Đã hơn 9 giờ rồi, sao anh ấy còn đang học?",7],
+["明天有考试，他说今天要___准备。","好好",["已经","经常","非常"],"Ngày mai có bài kiểm tra, anh ấy nói hôm nay phải chuẩn bị thật tốt.",7],
+["你现在在___呢？","哪儿",["什么","谁","几"],"Hiện giờ anh đang ở đâu vậy?",7],
+["在去___的路上。","机场",["教室","公司","学校"],"Đang trên đường ra sân bay.",7],
+["在去机场的___上。","路",["门","车","天"],"Đang trên đường ra sân bay.",7],
+["我下___了。","飞机",["汽车","自行车","面条"],"Em xuống máy bay rồi.",7],
+["你还有多长时间能___这儿？","到",["走","过","离"],"Còn bao lâu nữa anh mới đến đây?",7],
+["二十___就到。","分钟",["小时","公斤","米"],"20 phút nữa là đến.",7],
+["你家___公司远吗？","离",["到","在","给"],"Nhà chị có ở xa công ty không?",7],
+["你家离公司___吗？","远",["快","慢","长"],"Nhà chị có ở xa công ty không?",7],
+["你家离___远吗？","公司",["机场","教室","路"],"Nhà chị có ở xa công ty không?",7],
+["坐公共汽车要一个多___呢！","小时",["分钟","公斤","米"],"Đi xe buýt phải mất hơn một giờ đồng hồ!",7],
+["___公共汽车要一个多小时呢！","坐",["开","走","到"],"Đi xe buýt phải mất hơn một giờ đồng hồ!",7],
+["坐___要一个多小时呢！","公共汽车",["自行车","飞机","面条"],"Đi xe buýt phải mất hơn một giờ đồng hồ!",7],
+["坐公共汽车太___了，你怎么不开车？","慢",["快","远","好吃"],"Đi xe buýt thì chậm quá, sao chị không lái xe?",7],
+["坐公共汽车太慢了，你怎么不___？","开车",["游泳","跑步","起床"],"Đi xe buýt thì chậm quá, sao chị không lái xe?",7],
+["开车也不___，路上车太多了！","快",["慢","远","好"],"Lái xe cũng chẳng nhanh được, trên đường có quá nhiều xe!",7],
+["今天晚上我们一起吃饭吧，给你___生日。","过",["送","来","到"],"Tối nay chúng ta cùng đi ăn cơm nhé, mừng sinh nhật bạn đó.",7],
+["今天？___我的生日还有一个多星期呢！","离",["到","在","给"],"Hôm nay à? Còn hơn một tuần nữa mới đến sinh nhật của mình mà!",7],
+["___个星期我要去北京，今天过吧。","下",["上","几","多"],"Tuần sau mình sẽ đi Bắc Kinh nên ăn mừng hôm nay đi.",7],
+["离这儿不远有一个中国___。","饭馆",["机场","教室","公司"],"Gần đây có một quán ăn Trung Quốc.",7],
+["___几分钟就到了。","走",["坐","开","过"],"Đi bộ vài phút là đến rồi.",7],
+["走几分钟就___了。","到",["走","过","离"],"Đi bộ vài phút là đến rồi.",7]
+].map(([s,a,d,v,l])=>({s,a,d,v,l})));
+
+ARR.push(...[
+["Chưa, anh ấy còn đang học trong lớp.",["没有","他","还在","教室","学习","呢"],7],
+["Hôm nay anh ấy phải chuẩn bị thật tốt.",["他","今天","要","好好","准备"],7],
+["Hiện giờ anh đang ở đâu vậy?",["你","现在","在","哪儿","呢"],7],
+["Đang trên đường ra sân bay.",["在","去","机场的","路上"],7],
+["20 phút nữa là đến.",["二十","分钟","就","到"],7],
+["Nhà chị có ở xa công ty không?",["你家","离","公司","远","吗"],7],
+["Đi xe buýt phải mất hơn một giờ đồng hồ!",["坐","公共汽车","要","一个多","小时","呢"],7],
+["Sao chị không lái xe?",["你","怎么","不","开车"],7],
+["Còn hơn một tuần nữa mới đến sinh nhật của mình.",["离","我的","生日","还有","一个多","星期"],7],
+["Đi bộ vài phút là đến rồi.",["走","几","分钟","就","到了"],7]
+].map(([v,t,l])=>({v,t,l})));
+
+QA.push(...[
+["大卫回来了吗？","没有，他还在教室学习呢。","David về chưa? — Chưa, anh ấy còn đang học trong lớp.",7,"xw"],
+["已经9点多了，他怎么还在学习？","明天有考试，他说今天要好好准备。","Hơn 9 giờ rồi, sao còn học? — Mai có bài kiểm tra, anh ấy nói hôm nay phải chuẩn bị thật tốt.",7,"xw"],
+["你现在在哪儿呢？","在去机场的路上。","Giờ anh đang ở đâu? — Đang trên đường ra sân bay.",7,"jc"],
+["你还有多长时间能到这儿？","二十分钟就到。","Còn bao lâu nữa anh mới đến? — 20 phút nữa là đến.",7,"jc"],
+["你家离公司远吗？","很远，坐公共汽车要一个多小时呢！","Nhà chị có xa công ty không? — Rất xa, đi xe buýt mất hơn một tiếng!",7,"gs"],
+["坐公共汽车太慢了，你怎么不开车？","开车也不快，路上车太多了！","Xe buýt chậm quá, sao chị không lái xe? — Lái xe cũng chẳng nhanh, đường đông xe quá!",7,"gs"],
+["今天晚上我们一起吃饭吧，给你过生日。","今天？离我的生日还有一个多星期呢！","Tối nay đi ăn mừng sinh nhật bạn nhé. — Hôm nay à? Còn hơn một tuần nữa mới đến sinh nhật mình mà!",7,"sr"],
+["下个星期我要去北京，今天过吧。","好吧，离这儿不远有一个中国饭馆。","Tuần sau mình đi Bắc Kinh, mừng hôm nay đi. — Được thôi, gần đây có một quán ăn Trung Quốc.",7,"sr"]
+].map(([q,a,v,l,g])=>({q,a,v,l,g})));
+
+GRAM.push(
+{s:"你家___公司远吗？",a:"离",d:["到","在","给"],e:"A 离 B + 远 / 不远: A cách B (xa / không xa).",l:7},
+{s:"今天？___我的生日还有一个多星期呢！",a:"离",d:["到","在","给"],e:"离 + mốc thời gian + 还有 + khoảng thời gian: còn bao lâu nữa mới đến….",l:7},
+{s:"没有，他还在教室学习___。",a:"呢",d:["吗","吧","的"],e:"(还)在 + động từ + 呢: (vẫn) đang làm gì.",l:7},
+{s:"你现在在哪儿___？",a:"呢",d:["吗","吧","的"],e:"Câu hỏi đã có 哪儿 thì không dùng 吗; 呢 làm câu hỏi nhẹ nhàng hơn.",l:7},
+{s:"二十分钟___到。",a:"就",d:["还","都","也"],e:"Khoảng thời gian ngắn + 就 + động từ: chỉ … là đã… (nhấn mạnh nhanh, sớm).",l:7},
+{s:"坐公共汽车太慢___！",a:"了",d:["的","吗","呢"],e:"太 + tính từ + 了: … quá.",l:7},
+{s:"坐公共汽车要一个多小时___！",a:"呢",d:["吗","吧","的"],e:"呢 cuối câu cảm thán: nhấn mạnh (… đấy!).",l:7},
+{q:"Chọn cách nói đúng: “hơn một tiếng”",a:"一个多小时",d:["一多个小时","多一个小时","一小时多个"],e:"Số 1–9 + 个 + 多 + 小时: 一个多小时, 一个多星期.",l:7},
+{s:"他说今天要___准备。",a:"好好",d:["好","很好","非常"],e:"好好 + động từ: làm gì thật tốt, thật chăm chỉ.",l:7},
+{s:"你还有多___时间能到这儿？",a:"长",d:["大","高","远"],e:"多长时间: bao lâu.",l:7},
+{s:"在去机场的路___。",a:"上",d:["下","中","边"],e:"在去 … 的路上: đang trên đường đi ….",l:7},
+{q:"Chọn câu đúng: “Lái xe cũng không nhanh.”",a:"开车也不快。",d:["开车不也快。","也开车不快。","开车快也不。"],e:"也 đứng trước 不 và trước động từ / tính từ.",l:7},
+{s:"下个星期我要去北京，今天___吧。",a:"过",d:["到","走","离"],e:"过生日: tổ chức sinh nhật. 过 + ngày lễ, sinh nhật.",l:7}
+);
+
+const S={lesson:"67",mode:"flash"};
 const view=document.getElementById("view");
 const shuffle=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
 const pool=a=>a.filter(x=>S.lesson==="all"||S.lesson.includes(String(x.l)));
@@ -435,7 +515,7 @@ function distract(correct,cands,n=3){return shuffle([...new Set(cands.filter(x=>
 /* ---------- session engine ---------- */
 let sess=null;
 function startSession(items,render,name){
-  if(!items.length){view.innerHTML="";view.append(el("div","meta",`<span>${name}</span>`),el("p","hint","Phần Ngữ pháp có câu hỏi cho Bài 3–6. Hãy chọn Bài 5–6, Tất cả hoặc một bài từ 3 đến 6."));return}
+  if(!items.length){view.innerHTML="";view.append(el("div","meta",`<span>${name}</span>`),el("p","hint","Phần Ngữ pháp có câu hỏi cho Bài 3–7. Hãy chọn Bài 6–7, Tất cả hoặc một bài từ 3 đến 7."));return}
   sess={items,render,name,i:0,score:0,wrong:[]};showItem()}
 function showItem(){
   const {items,i}=sess;
@@ -463,7 +543,7 @@ function showResult(){
 }
 /* ---------- pinyin ---------- */
 const PP=window.pinyinPro;
-try{PP&&PP.customPinyin({还:"hái",长:"cháng",都:"dōu",了:"le",得:"de",眼睛:"yǎn jing",先生:"xiān sheng",时候:"shí hou",回来:"huí lai",衣服:"yī fu",丈夫:"zhàng fu",意思:"yì si",喜欢:"xǐ huan",什么:"shén me",怎么:"zěn me",晚上:"wǎn shang",早上:"zǎo shang",椅子:"yǐ zi",桌子:"zhuō zi",杯子:"bēi zi",儿子:"ér zi",房间:"fáng jiān",漂亮:"piào liang",认识:"rèn shi",休息:"xiū xi",知道:"zhī dào",自行车:"zì xíng chē",姐姐:"jiě jie",听说:"tīng shuō"})}catch(e){}
+try{PP&&PP.customPinyin({还:"hái",长:"cháng",都:"dōu",了:"le",得:"de",眼睛:"yǎn jing",先生:"xiān sheng",时候:"shí hou",回来:"huí lai",衣服:"yī fu",丈夫:"zhàng fu",意思:"yì si",喜欢:"xǐ huan",什么:"shén me",怎么:"zěn me",晚上:"wǎn shang",早上:"zǎo shang",椅子:"yǐ zi",桌子:"zhuō zi",杯子:"bēi zi",儿子:"ér zi",房间:"fáng jiān",漂亮:"piào liang",认识:"rèn shi",休息:"xiū xi",知道:"zhī dào",自行车:"zì xíng chē",姐姐:"jiě jie",听说:"tīng shuō",教室:"jiào shì",好好:"hǎo hāo",公共汽车:"gōng gòng qì chē"})}catch(e){}
 function py(text){
   if(!PP)return "";
   const v=VOCAB.find(x=>x.h===text);if(v)return v.p;
