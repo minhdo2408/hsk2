@@ -86,7 +86,7 @@ footer{font-size:.8rem;color:var(--muted)}
 <div class="wrap">
   <header>
     <h1><span class="h">汉字</span>Luyện chữ Hán HSK 2–3</h1>
-    <p>Ôn hội thoại Giáo trình chuẩn HSK 2 (Bài 1–7) và HSK 3 (Bài 1–3). Chọn cấp độ và bài bên dưới; trang tự nhớ lựa chọn lần trước trên máy của bạn.</p>
+    <p>Ôn hội thoại Giáo trình chuẩn HSK 2 (Bài 1–9) và HSK 3 (Bài 1–3). Chọn cấp độ và bài bên dưới; trang tự nhớ lựa chọn lần trước trên máy của bạn.</p>
   </header>
 
   <div class="row"><span class="label">Cấp độ</span>
@@ -501,6 +501,122 @@ GRAM.push(
 {s:"下个星期我要去北京，今天___吧。",a:"过",d:["到","走","离"],e:"过生日: tổ chức sinh nhật. 过 + ngày lễ, sinh nhật.",l:7}
 );
 
+/* ===== HSK 2 · Bài 8–9 ===== */
+VOCAB.push(...[
+["再","zài","lại, lần nữa; hẵng, hãy, sẽ",8,1],["让","ràng","để, bảo",8,1],["告诉","gàosu","nói cho biết",8,1],
+["等","děng","đợi",8,1],["找","zhǎo","tìm",8,1],["事情","shìqing","sự việc, chuyện",8,1],
+["服务员","fúwùyuán","nhân viên phục vụ",8,1],["白","bái","có màu trắng",8,1],["黑","hēi","có màu đen",8,1],["贵","guì","đắt",8,1],
+["外边","wàibian","bên ngoài (giống 外面)",8,0],["宿舍","sùshè","ký túc xá",8,0],["宾馆","bīnguǎn","khách sạn",8,0],
+["住","zhù","ở, sống",8,0],["打开","dǎkāi","mở (cửa)",8,0],["打不开","dǎ bu kāi","không mở được",8,0],
+["您","nín","ngài, ông, bà (kính trọng)",8,0],["病","bìng","bệnh, ốm",8,0],
+["错","cuò","sai, nhầm",9,1],["从","cóng","từ",9,1],["跳舞","tiào wǔ","múa, khiêu vũ",9,1],["第一","dì-yī","thứ nhất, đầu tiên",9,1],
+["希望","xīwàng","mong, hy vọng",9,1],["问题","wèntí","vấn đề, câu hỏi",9,1],["欢迎","huānyíng","hoan nghênh",9,1],
+["上班","shàngbān","đi làm",9,1],["懂","dǒng","hiểu, biết",9,1],["完","wán","xong, hết",9,1],["题","tí","câu hỏi (bài tập, đề thi)",9,1],
+["对不起","duìbuqǐ","xin lỗi",9,0],["次","cì","lần",9,0],["找到","zhǎodào","tìm được",9,0],
+["听懂","tīngdǒng","nghe hiểu",9,0],["做完","zuòwán","làm xong",9,0],["星期一","xīngqīyī","thứ hai",9,0]
+].map(([h,p,v,l,c])=>({h,p,v,l,c})));
+
+FILL.push(...[
+["我们下午去看___，好吗？","电影",["衣服","报纸","房间"],"Buổi chiều chúng ta đi xem phim được không?",8],
+["今天下午我没有时间，明天下午___去吧。","再",["还","就","都"],"Chiều nay mình không rảnh rồi, chiều mai hãy đi vậy!",8],
+["___我想想再告诉你。","让",["给","跟","对"],"Để mình suy nghĩ rồi sẽ nói cho bạn biết.",8],
+["让我想想再___你。","告诉",["知道","认识","介绍"],"Để mình suy nghĩ rồi sẽ nói cho bạn biết.",8],
+["外边天气很好，我们出去运动___吧！","运动",["休息","游泳","起床"],"Bên ngoài trời rất đẹp, chúng ta ra ngoài tập thể dục một chút đi!",8],
+["你等___我，好吗？","等",["一","了","过"],"Cậu đợi mình một lát được không?",8],
+["王老师___我给大卫打个电话。","让",["给","跟","对"],"Cô Vương bảo mình gọi điện cho David.",8],
+["回来___打吧。","再",["还","都","也"],"Khi nào quay về hãy gọi.",8],
+["___大卫有什么事情吗？","找",["等","让","住"],"Cậu tìm David có chuyện gì không?",8],
+["找大卫有什么___吗？","事情",["电影","衣服","房间"],"Cậu tìm David có chuyện gì không?",8],
+["听说大卫病了，我想___时间去看看他。","找",["等","让","住"],"Nghe nói David bị bệnh rồi, mình định tìm lúc rảnh đi thăm cậu ấy.",8],
+["___，我房间的门打不开了。","服务员",["老师","医生","同学"],"Anh phục vụ ơi, cửa phòng tôi không mở được.",8],
+["服务员，我房间的门打不___了。","开",["完","懂","到"],"Anh phục vụ ơi, cửa phòng tôi không mở được.",8],
+["您___哪个房间？","住",["去","有","叫"],"Chị ở phòng nào ạ?",8],
+["好的，我___人去看看。","叫",["给","跟","对"],"Dạ được, tôi sẽ gọi người đến xem.",8],
+["这件___的有点儿长。","白",["黑","红","粉"],"Cái màu trắng này hơi dài.",8],
+["这件白的有点儿___。","长",["贵","黑","新"],"Cái màu trắng này hơi dài.",8],
+["那件___的有点儿贵。","黑",["白","红","粉"],"Cái màu đen kia hơi đắt.",8],
+["那件黑的有点儿___。","贵",["长","大","新"],"Cái màu đen kia hơi đắt.",8],
+["这是今天新___的。","来",["去","到","走"],"Đây là hàng mới về hôm nay đấy.",8],
+["让我___看看。","再",["还","都","也"],"Để tôi xem đã.",8],
+["你好！请问张欢___吗？","在",["是","有","去"],"Chào chị! Xin hỏi Trương Hoan có ở đó không?",9],
+["你打___了，我们这儿没有叫张欢的。","错",["完","懂","开"],"Anh gọi nhầm số rồi, ở chỗ chúng tôi không có ai tên Trương Hoan cả.",9],
+["你打错了，我们这儿没有___张欢的。","叫",["是","找","让"],"Anh gọi nhầm số rồi, ở chỗ chúng tôi không có ai tên Trương Hoan cả.",9],
+["您___几岁开始学习跳舞？","从",["到","离","在"],"Cô bắt đầu học múa từ lúc mấy tuổi vậy?",9],
+["您从几岁开始学习___？","跳舞",["游泳","跑步","踢足球"],"Cô bắt đầu học múa từ lúc mấy tuổi vậy?",9],
+["我___一次跳舞是在七岁的时候。","第",["每","几","这"],"Lần đầu tiên tôi múa là vào năm lên bảy tuổi.",9],
+["我第一___跳舞是在七岁的时候。","次",["个","件","本"],"Lần đầu tiên tôi múa là vào năm lên bảy tuổi.",9],
+["我___她能跟您学跳舞，可以吗？","希望",["觉得","知道","认识"],"Tôi mong là nó có thể học múa với cô, được không cô?",9],
+["没___，非常欢迎。","问题",["事情","时间","意思"],"Không có vấn đề gì, tôi rất hoan nghênh.",9],
+["没问题，非常___。","欢迎",["希望","认识","介绍"],"Không có vấn đề gì, tôi rất hoan nghênh.",9],
+["你知道吗？大卫找___工作了。","到",["完","懂","开"],"Chị biết không? David đã tìm được việc rồi.",9],
+["他从什么时候开始___？","上班",["下雨","出院","起床"],"Vậy khi nào thì nó bắt đầu đi làm?",9],
+["从下个___一开始。","星期",["月","年","天"],"Từ thứ hai tuần sau.",9],
+["这是他的第一个工作，___他能喜欢。","希望",["觉得","知道","认识"],"Đây là công việc đầu tiên của nó, hy vọng nó sẽ thích.",9],
+["你都听___了吗？","懂",["错","开","走"],"Bạn có nghe hiểu hết không?",9],
+["你都做___了没有？","完",["懂","开","走"],"Vậy bạn có làm hết không?",9],
+["___太多，我没做完。","题",["事情","时间","衣服"],"Câu hỏi quá nhiều nên mình không làm hết.",9],
+["题太多，我___做完。","没",["不","了","都"],"Câu hỏi quá nhiều nên mình không làm hết.",9]
+].map(([s,a,d,v,l])=>({s,a,d,v,l})));
+
+ARR.push(...[
+["Chiều mai hãy đi vậy.",["明天","下午","再","去","吧"],8],
+["Để mình suy nghĩ rồi sẽ nói cho bạn biết.",["让我","想想","再","告诉","你"],8],
+["Chúng ta ra ngoài tập thể dục một chút đi!",["我们","出去","运动运动","吧"],8],
+["Cô Vương bảo mình gọi điện cho David.",["王老师","让","我","给大卫","打个","电话"],8],
+["Cửa phòng tôi không mở được.",["我","房间的","门","打不开","了"],8],
+["Cái màu trắng này hơi dài.",["这件","白的","有点儿","长"],8],
+["Đây là hàng mới về hôm nay.",["这","是","今天","新来","的"],8],
+["Anh gọi nhầm số rồi.",["你","打","错","了"],9],
+["Cô bắt đầu học múa từ lúc mấy tuổi?",["您","从","几岁","开始","学习","跳舞"],9],
+["Lần đầu tiên tôi múa là vào năm lên bảy tuổi.",["我","第一次","跳舞","是","在","七岁的","时候"],9],
+["Tôi mong là nó có thể học múa với cô.",["我","希望","她","能","跟您","学","跳舞"],9],
+["David đã tìm được việc rồi.",["大卫","找到","工作","了"],9],
+["Bạn có làm hết không?",["你","都","做完","了","没有"],9],
+["Câu hỏi quá nhiều nên mình không làm hết.",["题","太多","我","没","做完"],9]
+].map(([v,t,l])=>({v,t,l})));
+
+QA.push(...[
+["我们下午去看电影，好吗？","今天下午我没有时间，明天下午再去吧。","Chiều nay đi xem phim nhé? — Chiều nay mình không rảnh, chiều mai hãy đi.",8,"mv"],
+["你想看什么电影？","让我想想再告诉你。","Bạn muốn xem phim gì? — Để mình nghĩ rồi nói cho bạn biết.",8,"mv"],
+["外边天气很好，我们出去运动运动吧！","你等等我，好吗？王老师让我给大卫打个电话。","Trời đẹp, ra ngoài tập thể dục đi! — Đợi mình chút nhé, cô Vương bảo mình gọi cho David.",8,"dorm"],
+["找大卫有什么事情吗？","听说大卫病了，我想找时间去看看他。","Tìm David có chuyện gì à? — Nghe nói David bị ốm, mình định tìm lúc rảnh đi thăm.",8,"dorm"],
+["服务员，我房间的门打不开了。","您住哪个房间？","Anh phục vụ ơi, cửa phòng tôi không mở được. — Chị ở phòng nào ạ?",8,"hotel"],
+["您住哪个房间？","317。","Chị ở phòng nào ạ? — 317.",8,"hotel"],
+["你看看这几件衣服怎么样。","这件白的有点儿长，那件黑的有点儿贵。","Xem mấy cái đầm này thế nào. — Cái trắng hơi dài, cái đen hơi đắt.",8,"sh"],
+["这件红的呢？这是今天新来的。","让我再看看。","Cái đỏ này thì sao? Hàng mới về hôm nay đấy. — Để tôi xem đã.",8,"sh"],
+["你好！请问张欢在吗？","你打错了，我们这儿没有叫张欢的。","Xin hỏi Trương Hoan có ở đó không? — Anh gọi nhầm rồi, ở đây không có ai tên Trương Hoan.",9,"ph3"],
+["您从几岁开始学习跳舞？","我第一次跳舞是在七岁的时候。","Cô học múa từ mấy tuổi? — Lần đầu tôi múa là lúc bảy tuổi.",9,"fb"],
+["我希望她能跟您学跳舞，可以吗？","没问题，非常欢迎。","Tôi mong cháu được học múa với cô, được không ạ? — Không vấn đề gì, rất hoan nghênh.",9,"fb"],
+["你知道吗？大卫找到工作了。","太好了！他从什么时候开始上班？","Biết gì chưa? David tìm được việc rồi. — Tốt quá! Khi nào cậu ấy bắt đầu đi làm?",9,"job"],
+["他从什么时候开始上班？","从下个星期一开始。","Khi nào cậu ấy bắt đầu đi làm? — Từ thứ hai tuần sau.",9,"job"],
+["昨天的考试怎么样？你都听懂了吗？","听懂了。","Bài kiểm tra hôm qua thế nào? Nghe hiểu hết không? — Hiểu hết rồi.",9,"ex"],
+["你都做完了没有？","题太多，我没做完。","Bạn làm hết chưa? — Câu hỏi nhiều quá, mình không làm hết.",9,"ex"]
+].map(([q,a,v,l,g])=>({q,a,v,l,g})));
+
+GRAM.push(
+{s:"今天下午我没有时间，明天下午___去吧。",a:"再",d:["又","还","就"],e:"再 + động từ: (để sau) rồi hãy làm, việc chưa xảy ra. 又 dùng cho việc đã lặp lại.",l:8},
+{s:"让我想想___告诉你。",a:"再",d:["又","就","还"],e:"A 再 B: làm A xong rồi mới làm B (想想再告诉你 = nghĩ đã rồi nói).",l:8},
+{s:"王老师___我给大卫打个电话。",a:"让",d:["给","跟","对"],e:"让 + người + động từ: bảo, để ai làm gì.",l:8},
+{s:"我们出去运动___吧！",a:"运动",d:["一个","着","过"],e:"Lặp động từ hai âm tiết theo kiểu ABAB (运动运动): làm một chút, cho thoải mái.",l:8},
+{q:"Chọn cách lặp đúng của động từ 休息:",a:"休息休息",d:["休休息息","休息息","休休息"],e:"Động từ hai âm tiết lặp theo kiểu ABAB: 休息休息, 运动运动.",l:8},
+{s:"你等___我，好吗？",a:"等",d:["一","过","了"],e:"Động từ một âm tiết lặp AA (等等, 看看, 想想): làm một chút, giọng nhẹ nhàng.",l:8},
+{s:"我房间的门打___开了。",a:"不",d:["没","了","很"],e:"Động từ + 不 + 开 = không mở được (打不开). Dạng khẳng định là 打得开.",l:8},
+{s:"这件白___有点儿长。",a:"的",d:["得","了","着"],e:"Tính từ + 的 thay cho danh từ đã biết: 白的 = cái màu trắng.",l:8},
+{s:"那件黑的___贵。",a:"有点儿",d:["一点儿","一下","一些"],e:"有点儿 + tính từ: hơi … (thường mang ý không hài lòng).",l:8},
+{s:"您___几岁开始学习跳舞？",a:"从",d:["离","到","在"],e:"从 + thời gian / nơi chốn + 开始: bắt đầu từ ….",l:9},
+{s:"我___一次跳舞是在七岁的时候。",a:"第",d:["每","几","这"],e:"第 + số: chỉ thứ tự (第一 = thứ nhất, 第一次 = lần đầu tiên).",l:9},
+{s:"我第一次跳舞是___七岁的时候。",a:"在",d:["从","离","到"],e:"是在 + thời điểm: nhấn mạnh thời gian (là vào lúc …).",l:9},
+{s:"大卫找___工作了。",a:"到",d:["完","懂","开"],e:"Bổ ngữ kết quả 到: đạt được mục đích (找到 = tìm được).",l:9},
+{s:"你都听___了吗？",a:"懂",d:["到","开","走"],e:"Bổ ngữ kết quả 懂: hiểu (听懂 = nghe hiểu, 看懂 = đọc hiểu).",l:9},
+{s:"你都做___了没有？",a:"完",d:["懂","开","走"],e:"Bổ ngữ kết quả 完: xong, hết (做完, 写完).",l:9},
+{s:"你打___了，我们这儿没有叫张欢的。",a:"错",d:["完","懂","开"],e:"Bổ ngữ kết quả 错: sai, nhầm (打错 = gọi nhầm).",l:9},
+{q:"Chọn câu đúng: “Mình chưa làm xong.”",a:"我没做完。",d:["我不做完。","我没做完了。","我做没完。"],e:"Phủ định bổ ngữ kết quả: 没 + động từ + bổ ngữ, không thêm 了.",l:9},
+{q:"Chọn câu hỏi đúng: “Bạn làm xong chưa?”",a:"你做完了没有？",d:["你做完没了？","你没做完了吗？","你做了完没有？"],e:"Câu hỏi với bổ ngữ kết quả: động từ + bổ ngữ + 了没有？ (hoặc …了吗？).",l:9},
+{s:"我希望她___跟您学跳舞。",a:"能",d:["得","着","了"],e:"希望 + người + 能 + động từ: mong ai có thể làm gì.",l:9},
+{s:"从下个星期一___。",a:"开始",d:["开","到","完"],e:"从 … 开始: bắt đầu từ ….",l:9},
+{s:"题___多，我没做完。",a:"太",d:["得","了","着"],e:"太 + tính từ: quá … (题太多 = câu hỏi quá nhiều).",l:9}
+);
+
 /* ===================== HSK 3 (l = 31, 32, 33 → Bài 1, 2, 3) ===================== */
 VOCAB.push(...[
 ["周末","zhōumò","cuối tuần",31,1],["打算","dǎsuàn","kế hoạch, dự định",31,1],["啊","a","trợ từ cuối câu (khẳng định, biện minh)",31,1],
@@ -683,7 +799,7 @@ GRAM.push(
 
 /* ---------- levels & lesson ranges ---------- */
 const LEVELS={
-  "2":[["6,7","Bài 6–7"],["1,2,3,4,5,6,7","Tất cả HSK 2"],["1","Bài 1"],["2","Bài 2"],["3","Bài 3"],["4","Bài 4"],["5","Bài 5"],["6","Bài 6"],["7","Bài 7"]],
+  "2":[["8,9","Bài 8–9"],["1,2,3,4,5,6,7,8,9","Tất cả HSK 2"],["1","Bài 1"],["2","Bài 2"],["3","Bài 3"],["4","Bài 4"],["5","Bài 5"],["6","Bài 6"],["7","Bài 7"],["8","Bài 8"],["9","Bài 9"]],
   "3":[["31,32,33","Bài 1–3"],["31","Bài 1"],["32","Bài 2"],["33","Bài 3"]]
 };
 const lessonName=l=>l>30?`HSK 3 · Bài ${l-30}`:`HSK 2 · Bài ${l}`;
@@ -729,7 +845,7 @@ function showResult(){
 }
 /* ---------- pinyin ---------- */
 const PP=window.pinyinPro;
-try{PP&&PP.customPinyin({还:"hái",长:"cháng",都:"dōu",了:"le",得:"de",眼睛:"yǎn jing",先生:"xiān sheng",时候:"shí hou",回来:"huí lai",衣服:"yī fu",丈夫:"zhàng fu",意思:"yì si",喜欢:"xǐ huan",什么:"shén me",怎么:"zěn me",晚上:"wǎn shang",早上:"zǎo shang",椅子:"yǐ zi",桌子:"zhuō zi",杯子:"bēi zi",儿子:"ér zi",房间:"fáng jiān",漂亮:"piào liang",认识:"rèn shi",休息:"xiū xi",知道:"zhī dào",自行车:"zì xíng chē",姐姐:"jiě jie",听说:"tīng shuō",教室:"jiào shì",好好:"hǎo hāo",公共汽车:"gōng gòng qì chē",还是:"hái shi",着急:"zháo jí",地图:"dì tú",睡觉:"shuì jiào",太太:"tài tai",告诉:"gào su",舒服:"shū fu",上来:"shàng lai",下来:"xià lai",上去:"shàng qu",回去:"huí qu",出去:"chū qu",过去:"guò qu",走走:"zǒu zou",等等:"děng deng",看看:"kàn kan",记得:"jì de",别的:"bié de",裤子:"kù zi",打算:"dǎ suàn",便宜:"pián yi",放着:"fàng zhe",写着:"xiě zhe",就行:"jiù xíng",一直:"yì zhí",上面:"shàng mian"})}catch(e){}
+try{PP&&PP.customPinyin({还:"hái",长:"cháng",都:"dōu",了:"le",得:"de",眼睛:"yǎn jing",先生:"xiān sheng",时候:"shí hou",回来:"huí lai",衣服:"yī fu",丈夫:"zhàng fu",意思:"yì si",喜欢:"xǐ huan",什么:"shén me",怎么:"zěn me",晚上:"wǎn shang",早上:"zǎo shang",椅子:"yǐ zi",桌子:"zhuō zi",杯子:"bēi zi",儿子:"ér zi",房间:"fáng jiān",漂亮:"piào liang",认识:"rèn shi",休息:"xiū xi",知道:"zhī dào",自行车:"zì xíng chē",姐姐:"jiě jie",听说:"tīng shuō",教室:"jiào shì",好好:"hǎo hāo",公共汽车:"gōng gòng qì chē",还是:"hái shi",着急:"zháo jí",地图:"dì tú",睡觉:"shuì jiào",太太:"tài tai",告诉:"gào su",舒服:"shū fu",上来:"shàng lai",下来:"xià lai",上去:"shàng qu",回去:"huí qu",出去:"chū qu",过去:"guò qu",走走:"zǒu zou",等等:"děng deng",看看:"kàn kan",记得:"jì de",别的:"bié de",裤子:"kù zi",打算:"dǎ suàn",便宜:"pián yi",放着:"fàng zhe",写着:"xiě zhe",就行:"jiù xíng",一直:"yì zhí",上面:"shàng mian",外边:"wài bian",事情:"shì qing",打不开:"dǎ bu kāi",对不起:"duì bu qǐ",想想:"xiǎng xiang",服务员:"fú wù yuán"})}catch(e){}
 function py(text){
   if(!PP)return "";
   const v=VOCAB.find(x=>x.h===text);if(v)return v.p;
